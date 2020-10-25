@@ -1,0 +1,13 @@
+# firebase UID : 
+# hash-config.
+# alogrithm :
+# SCRYPT : 
+# base : 64 :
+-------------------------------------------------------------------------------------------------------------
+hash_config {
+  algorithm: SCRYPT,
+  base64_signer_key: 4rnV4nkyGWBH9uXYh/E0WeKywnV/SlubENGet7HlpnEwtf7tHi0sA0MqWjosdo56zdpcIDdy0G4dDW77hSsN8w==,
+  base64_salt_separator: Bw==,
+  rounds: 8,
+  mem_cost: 14,
+}
