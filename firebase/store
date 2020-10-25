@@ -1,0 +1,96 @@
+# firebase :
+# datastore : 
+# rules : 
+# results :
+--------------------------------------------------------------
+GET:
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2020, 11, 23);
+    }
+  }
+}
+
+--result--
+request : true ;
+
+{
+"path": "/databases/%28default%29/documents/path/user"
+"method": "get"
+"auth": null
+"time": "2020-10-25T02:45:20.349Z"
+}
+
+
+--------------------------------------------------------------
+CREATE :
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2020, 11, 23);
+    }
+  }
+}
+
+--results-- 
+request : true ;
+
+{
+"path": "/databases/%28default%29/documents/path/user"
+"method": "create"
+"auth": null
+"time": "2020-10-25T02:41:48.579Z"
+}
+-------------------------------------------------------
+
+update : 
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2020, 11, 23);
+    }
+  }
+}
+
+
+--results--
+
+{
+"path": "/databases/%28default%29/documents/path/user"
+"method": "update"
+"auth": null
+"time": "2020-10-25T02:47:09.869Z"
+}
+---------------------------------------------------------
+
+delete : 
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2020, 11, 23);
+    }
+  }
+}
+
+--results--
+
+{
+"path": "/databases/%28default%29/documents/path/user"
+"method": "delete"
+"resource": null
+"auth": null
+"time": "2020-10-25T02:49:03.965Z"
+}
