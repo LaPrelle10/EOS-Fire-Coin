@@ -1,0 +1,4 @@
+gcloud beta logging buckets update _Default --location=global --retention-days=[RETENTION_DAYS]
+
+
+gcloud beta logging buckets update _Default --location=global --retention-days=365
